@@ -1,0 +1,93 @@
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, form {
+    margin: 0;
+    padding: 0;
+}
+  
+/* Main styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('https://i.pinimg.com/originals/54/77/6e/54776e6d35bcf94e10c7d1bd53525b2d.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: This makes the background fixed when scrolling */
+}
+
+/* Main heading style */
+h1 {
+    text-align: center;
+    padding: 40px 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 36px;
+    margin-top: calc(2vh); /* Move the header down by 15% of the viewport height */
+}
+
+/* Form styles */
+form {
+    max-width: 400px;
+    margin: -12px auto; /* Updated to move the form section up a bit */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Add a subtle animation to the button */
+button[type="submit"] {
+    animation: pulseAnimation 1s infinite;
+}
+
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
