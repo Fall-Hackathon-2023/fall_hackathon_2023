@@ -1,13 +1,7 @@
-<!-- templates/home.html -->
+{% extends "layout.html" %}
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+{% block body %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Flask Web App</title>
-</head>
-<body>
     <h1>Welcome to My Flask Web App!</h1>
-</body>
-</html>
+
+{% endblock %}
