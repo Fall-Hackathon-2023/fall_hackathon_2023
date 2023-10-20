@@ -1,3 +1,33 @@
+/*   ----- Imports  -----  */  
+
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+/*   ----- Variables  -----  */
+
+:root {
+  --primary-color: #325AB4;
+  --secondary-color-1: #1f2329;
+  --secondary-color-2: #3e4c5b;
+  --div-color: #c3c6cb;
+  --font-color-light: #9aa8b6;
+}
+
+/* ============= GLOBAL CSS =============== */
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+} /*16px*/
+
+body {
+  font-family: "Helvetica Neue", Tahoma, sans-serif;
+}
+
 /* Reset some default styles for consistent rendering */
 body, h1, h2, p {
     margin: 0;
