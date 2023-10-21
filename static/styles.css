@@ -1,15 +1,15 @@
-/*   ----- Imports  -----  */  
+/*   ----- Imports  -----  */
 
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
 
 /*   ----- Variables  -----  */
 
 :root {
-  --primary-color: #325AB4;
-  --secondary-color-1: #1f2329;
-  --secondary-color-2: #3e4c5b;
-  --div-color: #c3c6cb;
-  --font-color-light: #9aa8b6;
+    --primary-color: #585858;
+    --secondary-color-1: #F6F6F6;
+    --secondary-color-2: #3e4c5b;
+    --div-color: white;
+    --font-color-light: #9aa8b6;
 }
 
 /* ============= GLOBAL CSS =============== */
@@ -17,36 +17,69 @@
 *,
 ::after,
 ::before {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 100%;
-} /*16px*/
+    font-size: 100%;
+}
+
+/*16px*/
 
 body {
-  font-family: "Helvetica Neue", Tahoma, sans-serif;
+    font-family: "Helvetica Neue", Tahoma, sans-serif;
 }
 
 /* Reset some default styles for consistent rendering */
-body, h1, h2, p {
+body,
+h1,
+h2,
+p {
     margin: 0;
     padding: 0;
 }
 
 /* Set a background color and text color for the body */
 body {
-    background-color: #f5f5f5;
+    background-color: white;
     font-family: Arial, sans-serif;
     color: #333;
 }
 
 /* Style the header */
-header {
-    background-color: #3498db;
-    color: #fff;
-    padding: 20px;
+.intro {
+    color: var(--primary-color);
+    padding: 0 60px;
+}
+
+/* Style the logo */
+.top {
+    display: flex;
+    align-items: center;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
     text-align: center;
+    line-height: 40px;
+    margin: 40px 60px;
+
+}
+
+.logo .letter {
+
+    color: white;
+
+}
+
+.title {
+    color: var(--primary-color);
 }
 
 /* Style the main content area */
@@ -57,6 +90,36 @@ header {
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the intro */
+.intro p {
+    margin: 40px 0 10px 0;
+    font-size: 14pt;
+}
+
+/* Style the tiles */
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 40px;
+    margin: 3%;
+}
+
+.tiles article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tiles article .image img {
+    border-radius: 10px;
+}
+
+.tiles article img {
+    width: 300px;
+    height: 220px;
 }
 
 /* Style links */
@@ -95,10 +158,21 @@ button:hover {
 
 /* Style the footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-color-1);
+    color: var(--primary-color);
     padding: 10px;
     text-align: center;
+}
+
+/* Keep footer stay at the bottom of the page*/
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#main {
+    flex: 1;
 }
 
 /* Add media queries for responsiveness */
