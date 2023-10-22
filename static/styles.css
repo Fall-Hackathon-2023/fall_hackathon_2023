@@ -124,7 +124,7 @@ body {
 
 /* Style links */
 a {
-    color: #3498db;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
