@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from backend.routes.reviews import reviews_bp
+from backend.routes.reviews import populate_db
 
 app = Flask(__name__)
 
@@ -16,4 +18,6 @@ def fair():
 
 
 if __name__ == '__main__':
+    app.register_blueprint(reviews_bp)
+    populate_db()
     app.run(debug=True)
