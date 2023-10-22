@@ -2,6 +2,22 @@
 
 {% block body %}
 
-    <h1>Welcome to My Flask Web App!</h1>
+    <div class="headbar">
+        <h1 class="title">Tech Career Fair Reviews</h1>
+        <!-- 
+            Citation for the following 'Hoverable Dropdown':
+            10/21/2023
+            Based on: 
+            https://www.w3schools.com/howto/howto_css_dropdown.asp
+        -->
+        <div class="dropdown">
+            <button class="dropbtn">Select a Career Fair... &darr;</button>
+            <div class="dropdown-content">
+            <a href="#">Codepath</a>
+            <a href="#">Rewriting The Code</a>
+            <a href="#">Girls Who Code</a>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
