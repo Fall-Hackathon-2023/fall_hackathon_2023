@@ -51,3 +51,5 @@ def increment_id():
     global id_tracker
     id_tracker += 1
     return id_tracker
+
+def populate_db():
