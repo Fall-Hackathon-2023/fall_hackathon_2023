@@ -1,141 +1,135 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
-    <!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
-							<div class="top">
-								<div class="logo">
-									<span class="letter">T</span>
-								</div>
-								<div class="title">Tech Fair Rater</div>
-							</div>
-								
-						</div>
-					</header>
-
-
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header class="intro">
-								<h1>Navigating Tech Career Fairs, One Review at a Time</h1>
-								<p>Your ultimate guide to navigating the world of technology career fairs! Whether you're a computer science major or an aspiring tech enthusiast, we are your go-to resource for insightful reviews and firsthand experiences from attendees. Discover the best tech fairs and embark on your career journey with confidence. Your next great opportunity awaits – let's explore it together!</p>
-							</header>
-							<section class="tiles">
-								<article class="tile">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="static/images/GHC.png" alt="grace hopper celebration website snapshot" /></a>
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>Grace Hopper Celebration</h2>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="static/images/pycon.png" alt="pycon website snaphot" /></a>
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>PyCon</h2>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="static/images/devwk.png" alt="developer week website snapshot" /></a>
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>Developer Week</h2>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="../static/images/codepath.png" alt="snapshot of codepath emerging engineers summit website" /></a>
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>Codepath</h2>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="../static/images/rtc.png" alt="" /></a>
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>RTC</h2>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="../static/images/swe.png" alt="" /></a>	
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>SWE</h2>
-										<div class="content">
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="../static/images/tapia.png" alt="" /></a>
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>TAPIA</h2>
-									</a>
-								</article>
-								
-								<article class="style1">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="../static/images/nsbe.png" alt="" /></a>
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>NSBE</h2>
-									</a>
-								</article>	
-
-								<article class="style3">
-									<span class="image">
-										<a href="{{ url_for('fair') }}"><img src="../static/images/osu.jpeg" alt="" /></a>
-									</span>
-									<a href="{{ url_for('fair') }}">
-										<h2>OSU Engineering</h2>
-									</a>
-								</article>
-							</section>
-						</div>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Rate more tech fairs? Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<div class="actions">
-										<div><input type="submit" value="Send" class="primary" /></div>
-									</div>
-								</form>
-							</section>
-							
-							<div class="copyright">
-								<p>&copy; 2023. All rights reserved</p>
-							</div>
-						</div>
-					</footer>
-
+<!-- Wrapper -->
+<div id="wrapper">
+	<!-- Header -->
+	<header id="header">
+		<div class="top">
+			<div class="logo">
+				<span class="letter">T</span>
 			</div>
+			<div class="title">Tech Fair Rater</div>
+		</div>
+	</header>
+
+	<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<header class="intro">
+					<h1>Navigating Tech Career Fairs, One Review at a Time</h1>
+					<p>Your ultimate guide to navigating the world of technology career fairs! Whether you're a computer science major or an aspiring tech enthusiast, we are your go-to resource for insightful reviews and firsthand experiences from attendees. Discover the best tech fairs and embark on your career journey with confidence. Your next great opportunity awaits – let's explore it together!</p>
+				</header>
+				<section class="tiles">
+					<article class="tile">
+						<span class="image">
+							<a href="{{ url_for('reviews') }}"><img src="static/images/GHC.png" alt="grace hopper celebration website snapshot" /></a>
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>Grace Hopper Celebration</h2>
+						</a>
+					</article>
+					<article class="style2">
+						<span class="image">
+							<a href="{{ url_for('fair') }}"><img src="static/images/pycon.png" alt="pycon website snaphot" /></a>
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>PyCon</h2>
+						</a>
+					</article>
+					<article class="style3">
+						<span class="image">
+							<a href="{{ url_for('fair') }}"><img src="static/images/devwk.png" alt="developer week website snapshot" /></a>
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>Developer Week</h2>
+						</a>
+					</article>
+					<article class="style4">
+						<span class="image">
+							<a href="{{ url_for('fair') }}"><img src="../static/images/codepath.png" alt="snapshot of codepath emerging engineers summit website" /></a>
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>Codepath</h2>
+						</a>
+					</article>
+					<article class="style5">
+						<span class="image">
+							<a href="{{ url_for('fair') }}"><img src="../static/images/rtc.png" alt="" /></a>
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>RTC</h2>
+						</a>
+					</article>
+					<article class="style6">
+						<span class="image">
+							<a href="{{ url_for('fair') }}"><img src="../static/images/swe.png" alt="" /></a>	
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>SWE</h2>
+							<div class="content">
+						</a>
+					</article>
+					<article class="style2">
+						<span class="image">
+							<a href="{{ url_for('fair') }}"><img src="../static/images/tapia.png" alt="" /></a>
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>TAPIA</h2>
+						</a>
+					</article>
+					
+					<article class="style1">
+						<span class="image">
+							<a href="{{ url_for('fair') }}"><img src="../static/images/nsbe.png" alt="" /></a>
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>NSBE</h2>
+						</a>
+					</article>	
+
+					<article class="style3">
+						<span class="image">
+							<a href="{{ url_for('fair') }}"><img src="../static/images/osu.jpeg" alt="" /></a>
+						</span>
+						<a href="{{ url_for('fair') }}">
+							<h2>OSU Engineering</h2>
+						</a>
+					</article>
+				</section>
+			</div>
+		</div>
+
+	<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<section>
+					<h2>Rate more tech fairs? Get in touch</h2>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field half">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="field half">
+								<input type="email" name="email" id="email" placeholder="Email" />
+							</div>
+							<div class="field">
+								<textarea name="message" id="message" placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="actions">
+							<div><input type="submit" value="Send" class="primary" /></div>
+						</div>
+					</form>
+				</section>
+				
+				<div class="copyright">
+					<p>&copy; 2023. All rights reserved</p>
+				</div>
+			</div>
+		</footer>
+
+</div>
 
 
 {% endblock %}
