@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+    <div class="reviews-container">
+        {% if data %}
+            {% for item in data %}
+                <div class="review">
+                    {% for key in item.keys() %}
+                        {% if key == "title" %}
+                            <h3 class="review-title"> {{item[key]}} </h3>
+                        {% if key == "review_body" %}
+                            <p class="review-body"> {{item[key]}} </p>
+                        {% if key == "date" %}
+                            <p class="review-date"> {{item[key]}} </p>
+                </div>
+    </div>
+
+{% endblock %}
