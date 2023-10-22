@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, Response
+from flask import Blueprint, jsonify, request, Response, render_template
 from backend.object.Review import ReviewObj as Review
 
 reviews_bp = Blueprint("reviews", __name__, url_prefix="/reviews")
@@ -28,28 +28,30 @@ def get_all_reviews():
                  "review_body": review_body}
             ))
 
-    return jsonify(json_review_list)
+    return render_template("reviews.html", data=jsonify(json_review_list))
 
 
 @reviews_bp.route("/create", methods=["POST"])
 def create_reviews():
     new_review = request.get_json()
 
+    fair_id = new_review['id']
     title = new_review['title']
     date = new_review['date']
     review = new_review['review']
     review_body = new_review['review_body']
 
-    review_obj = Review(increment_id(), title, date, review, review_body)
+    review_obj = Review(fair_id, title, date, review, review_body)
 
     review_database.append(review_obj)
 
     return Response(status=204)
 
 
-def increment_id():
-    global id_tracker
-    id_tracker += 1
-    return id_tracker
+# def increment_id():
+#     global id_tracker
+#     id_tracker += 1
+#     return id_tracker
 
 def populate_db():
+s
