@@ -23,7 +23,7 @@ def get_all_reviews():
         review_body = review.get_review_body()
         json_review_list.append(Review(get_id, title, date, review_flt, review_body))
 
-    return jsonify(Review=[e.serialize() for e in json_review_list])
+    return jsonify([e.serialize() for e in json_review_list])
 
 
 @reviews_bp.route("/create", methods=["POST"])
