@@ -20,3 +20,12 @@ class ReviewObj:
 
     def get_review_body(self):
         return self._review_body
+
+    def serialize(self):
+        return {
+            "id": self._id,
+            "title": self._title,
+            "date": self._date,
+            "review": self._review,
+            "review_body": self._review_body
+        }
