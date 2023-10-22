@@ -9,11 +9,17 @@
                     {% for key in item.keys() %}
                         {% if key == "title" %}
                             <h3 class="review-title"> {{item[key]}} </h3>
+                        {% endif %}
                         {% if key == "review_body" %}
                             <p class="review-body"> {{item[key]}} </p>
+                        {% endif %}
                         {% if key == "date" %}
                             <p class="review-date"> {{item[key]}} </p>
+                        {% endif %}
+                    {% endfor %}
                 </div>
+            {% endfor %}
+        {% endif %}
     </div>
 
 {% endblock %}
