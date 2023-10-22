@@ -1,7 +1,3 @@
-from time import strftime
-
-import dateutil
-
 from flask import Blueprint, jsonify, request, Response, render_template
 from backend.object.Review import ReviewObj as Review
 from faker import Faker
@@ -52,11 +48,6 @@ def populate_db():
 
     fake = Faker()
 
-    # "id": get_id,
-    # "title": title,
-    # "date": date,
-    # "review": review_flt,
-    # "review_body": review_body
     id_selector = [1, 2, 3, 4, 5, 6, 7, 8]
     id_to_fair = {1: "Grace Hopper Celebration",
                   2: "PyCon",
@@ -68,14 +59,13 @@ def populate_db():
                   8: "NSBE",
                   9: "OSU Engineering"}
 
-    for _ in range(0, 15):
-        choice = random.choice(id_selector)
-        fair = id_to_fair[choice]
-        fair_id = choice
-        fair_title = fair
-        date = fake.date_this_year(True, False)
-        date = date.strftime("%m/%d/%y")
-        review = round(random.uniform(4.5, 5.0), 2)
-        review_body = fake.paragraph(2)
-        new_review = Review(fair_id, fair_title, date, review, review_body)
-        review_database.append(new_review)
+    for i in id_selector:
+        for _ in range(0, random.randint(5, 11)):
+            fair_id = i
+            fair_title = id_to_fair[i]
+            date = fake.date_this_year(True, False)
+            date = date.strftime("%m/%d/%y")
+            review = round(random.uniform(4.5, 5.0), 2)
+            review_body = fake.paragraph(2)
+            new_review = Review(fair_id, fair_title, date, review, review_body)
+            review_database.append(new_review)
