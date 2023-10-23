@@ -13,9 +13,14 @@
                         {% if key == "review_body" %}
                             <p class="review-body"> {{item[key]}} </p>
                         {% endif %}
+                        <div>
+                        {% if key == "review" %}
+                            <span class="rating"> {{item[key]}} </span>
+                        {% endif %}
                         {% if key == "date" %}
                             <p class="review-date"> {{item[key]}} </p>
                         {% endif %}
+                        </div>
                     {% endfor %}
                 </div>
             {% endfor %}
