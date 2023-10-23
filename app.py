@@ -21,7 +21,7 @@ def fair():
 
 @app.route('/reviews')
 def reviews():
-    data = backend.routes.reviews.get_all_reviews()
+    data = backend.routes.reviews.get_all_reviews().get_json()
     return render_template('reviews.html', data=data)
 
 
