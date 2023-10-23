@@ -1,30 +1,104 @@
 {% extends "layout.html" %}
 
 {% block body %}
+<!-- Wrapper -->
+<div id="wrapper">
+	<!-- Header -->
+		<header id="header">
+			<div class="top">
+				
+					<div class="logo">
+						<span class="letter">T</span>
+					</div>
+					<div class="title"><a href="{{ url_for('home') }}"> Tech Fair Rater</a></div>
+			</div>
+		</header>
 
-    <div class="reviews-container">
-        {% if data %}
-            {% for item in data %}
-                <div class="review">
-                    {% for key in item.keys() %}
-                        {% if key == "title" %}
-                            <h3 class="review-title"> {{item[key]}} </h3>
+	<!-- Main -->
+		<div id="main">
+			<div class="inner">
+                 
+				<header class="intro">
+					<h1>{{ title }}</h1>			
+				</header>
+                
+				<section class="reviews">
+					<h2>Reviews</h2>
+					<div class="reviews-container">
+                        {% if data %}
+							{% set filtered_data = [] %}
+							{% set fair_to_id = {
+									"Grace Hopper Celebration": 1,
+                					"PyCon": 2,
+                  					"Developer Week": 3,
+                  					"CodePath": 4,
+                  					"RTC": 5,
+                  					"SWE": 6,
+                   					"TAPIA": 7,
+                  					"NSBE": 8,
+                  					"OSU Engineering": 9
+								}%}
+
+                            {% for item in data %}
+								{% if item[fair_id] == fair_to_id[title] %}
+									{% set filtered_data = filtered_data.append(item) %}
+						  		{% endif %}
+							{% endfor %}
+
+							{% for item in filtered_data %}
+                                <div class="review">
+                                    {% for key in item.keys() %}
+                                        {% if key == "title" %}
+                                            <h3 class="review-title"> {{item[key]}} </h3>
+                                        {% endif %}
+                                        {% if key == "review_body" %}
+                                            <p class="review-body"> {{item[key]}} </p>
+                                        {% endif %}
+                                        <div>
+                                        {% if key == "review" %}
+                                            <span class="rating"> {{item[key]}} </span>
+                                        {% endif %}
+                                        {% if key == "date" %}
+                                            <p class="review-date"> {{item[key]}} </p>
+                                        {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
                         {% endif %}
-                        {% if key == "review_body" %}
-                            <p class="review-body"> {{item[key]}} </p>
-                        {% endif %}
-                        <div>
-                        {% if key == "review" %}
-                            <span class="rating"> {{item[key]}} </span>
-                        {% endif %}
-                        {% if key == "date" %}
-                            <p class="review-date"> {{item[key]}} </p>
-                        {% endif %}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
+                    </div>
+				</section>
+			</div>
+		</div>
+
+	<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<section>
+					<h2>Rate more tech fairs? Get in touch</h2>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field half">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="field half">
+								<input type="email" name="email" id="email" placeholder="Email" />
+							</div>
+							<div class="field">
+								<textarea name="message" id="message" placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="actions">
+							<div><input type="submit" value="Send" class="primary" /></div>
+						</div>
+					</form>
+				</section>
+				
+				<div class="copyright">
+					<p>&copy; 2023. All rights reserved</p>
+				</div>
+			</div>
+		</footer>
+</div>
 
 {% endblock %}
