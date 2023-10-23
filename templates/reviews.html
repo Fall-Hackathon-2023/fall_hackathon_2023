@@ -6,10 +6,11 @@
 	<!-- Header -->
 		<header id="header">
 			<div class="top">
-				<div class="logo">
-					<span class="letter">T</span>
-				</div>
-				<div class="title">Tech Fair Rater</div>
+				
+					<div class="logo">
+						<span class="letter">T</span>
+					</div>
+					<div class="title"><a href="{{ url_for('home') }}"> Tech Fair Rater</a></div>
 			</div>
 		</header>
 
@@ -18,14 +19,33 @@
 			<div class="inner">
                  
 				<header class="intro">
-					<h1>{{ title }}</h1>
-					<p>intro paragraph</p>
+					<h1>{{ title }}</h1>			
 				</header>
                 
 				<section class="reviews">
+					<h2>Reviews</h2>
 					<div class="reviews-container">
                         {% if data %}
+							{% set filtered_data = [] %}
+							{% set fair_to_id = {
+									"Grace Hopper Celebration": 1,
+                					"PyCon": 2,
+                  					"Developer Week": 3,
+                  					"CodePath": 4,
+                  					"RTC": 5,
+                  					"SWE": 6,
+                   					"TAPIA": 7,
+                  					"NSBE": 8,
+                  					"OSU Engineering": 9
+								}%}
+
                             {% for item in data %}
+								{% if item[fair_id] == fair_to_id[title] %}
+									{% set filtered_data = filtered_data.append(item) %}
+						  		{% endif %}
+							{% endfor %}
+
+							{% for item in filtered_data %}
                                 <div class="review">
                                     {% for key in item.keys() %}
                                         {% if key == "title" %}
@@ -34,9 +54,14 @@
                                         {% if key == "review_body" %}
                                             <p class="review-body"> {{item[key]}} </p>
                                         {% endif %}
+                                        <div>
+                                        {% if key == "review" %}
+                                            <span class="rating"> {{item[key]}} </span>
+                                        {% endif %}
                                         {% if key == "date" %}
                                             <p class="review-date"> {{item[key]}} </p>
                                         {% endif %}
+                                        </div>
                                     {% endfor %}
                                 </div>
                             {% endfor %}
@@ -74,9 +99,6 @@
 				</div>
 			</div>
 		</footer>
-
 </div>
-
-    
 
 {% endblock %}

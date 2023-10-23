@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request
+from backend.routes.reviews import reviews_bp
+from backend.routes.reviews import populate_db
+import backend.routes.reviews
 
 app = Flask(__name__)
 
@@ -18,9 +21,11 @@ def home():
 @app.route('/reviews')
 def reviews():
     title = request.args.get('title')
-
-    return render_template('reviews.html', title=title)
+    data = backend.routes.reviews.get_all_reviews().get_json()
+    return render_template('reviews.html', title=title, data=data)
 
 
 if __name__ == '__main__':
+    app.register_blueprint(reviews_bp)
+    populate_db()
     app.run(debug=True)
